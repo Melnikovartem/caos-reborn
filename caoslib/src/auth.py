@@ -1,4 +1,5 @@
 from defined.post_init import CONFIG_PATH, COOKIES_PATH, LINKS_PATH
+from defined.constants import group_sheet
 
 import os
 import requests
@@ -12,7 +13,8 @@ def login():
 
     login = prompt.query('Tell me your login: ')
     password = getpass(prompt='Password: ', stream=None)
-    group = prompt.query('Tell me you group number from the caos.ejudge.ru (check FAQ in README): ')
+    group = prompt.query('Tell me you group number (in 19* format): ')
+    group = group_sheet[group]
 
     config = configparser.ConfigParser()
     config['Credentials'] = {}

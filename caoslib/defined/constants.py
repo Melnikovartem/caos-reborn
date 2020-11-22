@@ -15,6 +15,10 @@ gcc_string = "-O2 -Wall -Werror -Wno-unused-result -std=gnu11 -lm -fsanitize=add
 
 sync_info = b"caos-2019: \x68\x74\x74\x70\x73\x3a\x2f\x2f\x76\x6b\x2e\x63\x63\x2f\x61\x43\x74\x65\x52\x33".decode("utf-8")
 
+group_sheet = {}
+for i in range(0, 11):
+    group_sheet["19" + str(i+1)] = str(31+i)
+
 CLANG_FORMAT_STYLE_STRING = """\"{
     Language: Cpp,
     BasedOnStyle: Google,
